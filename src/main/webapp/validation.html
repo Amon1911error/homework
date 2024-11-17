@@ -1,0 +1,15 @@
+function validateForm() {
+    var email = document.getElementById("email").value;
+    var firstName = document.getElementById("firstName").value;
+    var lastName = document.getElementById("lastName").value;
+    var errorMessage = document.getElementById("error-message");
+
+    if (email === "" || firstName === "" || lastName === "") {
+        errorMessage.textContent = "Please fill out all fields.";
+    } else {
+        errorMessage.textContent = "";
+        // Submit the form or perform other actions
+        alert("Form submitted successfully!");
+        document.getElementById("myForm").submit();
+    }
+}

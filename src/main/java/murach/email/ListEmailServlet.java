@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
 package murach.email;
 
 import java.io.IOException;
@@ -9,10 +5,6 @@ import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import murach.business.User;
 
-/**
- *
- * @author ADMIN
- */
 public class ListEmailServlet extends HttpServlet {
 
     @Override
@@ -37,9 +29,17 @@ public class ListEmailServlet extends HttpServlet {
             String lastName = request.getParameter("lastName");
             String email = request.getParameter("email");
 
+            // get the new parameters
+            String hearAboutUs = request.getParameter("hearAboutUs");
+            String receiveAnnouncements = request.getParameter("receiveAnnouncements");
+
             // store data in User object and save User object in db
             User user = new User(firstName, lastName, email);
-            
+
+            // Log or process the new parameters
+            System.out.println("How did you hear about us: " + hearAboutUs);
+            System.out.println("Would you like to receive announcements: " + receiveAnnouncements);
+
             // set User object in request object and set URL
             request.setAttribute("user", user);
             url = "/thanks.jsp";   // the "thanks" page

@@ -4,9 +4,17 @@
         <servlet-name>ListEmailServlet</servlet-name>
         <servlet-class>murach.email.ListEmailServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>TestServlet</servlet-name>
+        <servlet-class>murach.email.TestServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ListEmailServlet</servlet-name>
         <url-pattern>/emailList</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TestServlet</servlet-name>
+        <url-pattern>/TestServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
